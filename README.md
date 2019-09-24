@@ -2,6 +2,22 @@ TF-UC2-AWS
 
 Terraform Version 0.11
 
+Create and use a module that will:
+
+Create a cloudtrail trail that will send the logs of an account to a cloudwatch group .   
+Create a cloudwatch group that will keep logs for 14 days and will send the logs to an elastic search instance .   
+Create an elastic search instance to collect the logs and display them .   
+Details:
+
+The cloudtrail S3 bucket should use a KMS key created by the module .  
+You can use a lambda function to send the logs to ES, this will need to be done in the same module, and the code of the lambda should be in the module too.    
+Your module should have a set of variables available for its users in order to be flexible, with no (or very limited) hardcoded values.    
+Your module should expose a set of meaningful outputs.    
+Your module should have a readme that explains what it does, how to use it and contain a few meaningful examples.    
+The HCL should be perfectly formatted, and no unnecessary files should be contained in the repository.   
+Ultimately this module should be production-ready for a customer.    
+Running this module should enable all (future) cloudtrail logs to be visible inside an ES instance by simply running the module.    
+
 Create a terraform.tfvars file -> look at terraform.tfvars.example 
 
 MODULES
